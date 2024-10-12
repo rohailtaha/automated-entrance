@@ -21,7 +21,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "baseUrl": "."
+    "baseUrl": "src", // Set the base URL for resolving non-relative module names
+    "paths": {
+      "@/*": ["*"] // Maps '@/' to the 'src/' directory
+    }
   },
   "exclude": ["node_modules"],
   "include": ["./src/**/*.ts"]
