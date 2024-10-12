@@ -4,7 +4,7 @@ import User from './User';
 import Hostel from './Hostel';
 
 const WardenDetails = sequelize.define(
-  'WardenDetails',
+  'warden_details',
   {
     id: {
       type: DataTypes.INTEGER,

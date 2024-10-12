@@ -3,7 +3,7 @@ import User from './User';
 import { DataTypes } from 'sequelize';
 
 const VisitorDetails = sequelize.define(
-  'VisitorDetails',
+  'visitor_details',
   {
     id: {
       type: DataTypes.INTEGER,

@@ -2,7 +2,7 @@ import { sequelize } from '@/utils/sequelize';
 import { DataTypes } from 'sequelize';
 
 const Hostel = sequelize.define(
-  'Hostels',
+  'hostels',
   {
     id: {
       type: DataTypes.INTEGER,

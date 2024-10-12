@@ -5,7 +5,7 @@ import { VISIT_STATUS } from '@/utils/constants';
 import User from './User';
 
 const Visit = sequelize.define(
-  'Visits',
+  'visits',
   {
     id: {
       type: DataTypes.INTEGER,
