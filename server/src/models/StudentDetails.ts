@@ -1,30 +1,32 @@
-import { sequelize } from 'src/utils/sequelize';
+import { sequelize } from '@/utils/sequelize';
 import User from './User';
 import { DataTypes } from 'sequelize';
 import Hostel from './Hostel';
 
-const StudentDetails = sequelize.define('StudentDetails', {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
+const StudentDetails = sequelize.define(
+  'StudentDetails',
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    studentId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true,
+    },
+    hostelId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'user_id',
-  },
-  studentId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'student_id',
-  },
-  hostelId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'hostel_id',
-  },
-});
+  { underscored: true }
+);
 
 // index on studentId
 

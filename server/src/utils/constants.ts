@@ -7,7 +7,7 @@ export const DB_NAME = process.env.DB_NAME!;
 
 export enum CLIENT_ROLE {
   Student = 'student',
-  Visitor = 'vistor',
+  Visitor = 'visitor',
   Warden = 'warden',
   Gatekeeper = 'gatekeeper',
 }

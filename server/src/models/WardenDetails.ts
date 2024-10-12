@@ -1,24 +1,26 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from 'src/utils/sequelize';
+import { sequelize } from '@/utils/sequelize';
 import User from './User';
 import Hostel from './Hostel';
 
-const WardenDetails = sequelize.define('WardenDetails', {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
+const WardenDetails = sequelize.define(
+  'WardenDetails',
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    hostelId: {
+      type: DataTypes.INTEGER,
+    },
   },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'user_id',
-  },
-  hostelId: {
-    type: DataTypes.INTEGER,
-    field: 'hostel_id',
-  },
-});
+  { underscored: true }
+);
 
 WardenDetails.belongsTo(User, { foreignKey: 'user_id' });
 User.hasOne(WardenDetails, { foreignKey: 'user_id' });
